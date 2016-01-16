@@ -15,6 +15,8 @@ This cookbook will install Elasticsearch and Java as well as provide a resource 
 Include `elasticsearch` in your node's `run_list`:
 
 ```
+include_recipe 'elasticsearch'
+
 es_instance 'mycluster' do
   action :create
   heap_size "8g"
@@ -41,6 +43,11 @@ es_instance 'mycluster' do
       "minimum_master_nodes" => 2,
     } }
   }
+end
+
+service 'elasticsearch-mycluster' do
+  supports :status => true, :restart => true, :reload => true
+  action [:start, :enable]
 end
 
 ```
