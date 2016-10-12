@@ -4,6 +4,6 @@ maintainer_email 'tcate@chef.io'
 license          'MIT license'
 description      'Installs/Configures elasticsearch'
 long_description 'Installs/Configures elasticsearch'
-version          '0.0.2'
+version          '0.0.3'
 
-depends 'apt', '~> 2.9.2'
+depends 'apt', '~> 4.0.2'
